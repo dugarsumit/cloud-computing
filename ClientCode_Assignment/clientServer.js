@@ -121,7 +121,7 @@ router.route('/exercise1_task2')
             /**
              * Processing can be continued here, user was authenticated
              */
-            if(auth[0] != 'CCS' || auth[1] != 'ccs_exercise1_task2'){
+            if(auth[0] != 'CCS' || auth[1] != 'CCS_exercise1_task2'){
                 res.end('Unsuccessful Authentication');
             }
             res.send('Successful Authentication');
