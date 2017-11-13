@@ -117,13 +117,13 @@ router.route('/exercise1_task2')
          */
         if (auth == null) {
             res.end('Unsuccessful Authentication');
-        }
-        if(auth[0] != 'CCS' || auth[1] != 'ccs_exercise1_task2'){
-            res.end('Unsuccessful Authentication');
         }else {
             /**
              * Processing can be continued here, user was authenticated
              */
+            if(auth[0] != 'CCS' || auth[1] != 'ccs_exercise1_task2'){
+                res.end('Unsuccessful Authentication');
+            }
             res.send('Successful Authentication');
         }
     });
