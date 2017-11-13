@@ -12,7 +12,7 @@
   "license": "",
   "dependencies": {
     "child_process": "^1.0.2",
-    "express": "~4.0.0"
+    "express": "^4.16.2"
   },
   "bugs": {
     "url": ""
