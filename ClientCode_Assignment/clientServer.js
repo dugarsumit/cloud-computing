@@ -5,8 +5,8 @@
  *  2 Tasks
  *      1. Accessing VM information using unauthenticated API
  *      2. Service Level Authentication
- * Developed by 'Write Group Name'
- * Write Names of All Members
+ * Developed by 'Group 19'
+ * Sumit, Neha, Pranshu
  */
 // =============================================================================
 /**
