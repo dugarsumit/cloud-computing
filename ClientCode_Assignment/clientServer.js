@@ -46,7 +46,7 @@ router.route('/exercise1_task1')
         /**
          * Hint : http://nodejs.org/api.html#_child_processes
          */
-        const exec = require('child_process').exec;
+        const exec = require('child_process').spawnSync;
         // ================================================================================================================
         /**
          * TO DO
@@ -57,15 +57,25 @@ router.route('/exercise1_task1')
          * 5. save in exercise_1_Message
          */
         // =================================================================================================================
+        var child;
+        child = exec('who | awk \'{print $1}\' | sort | uniq', {shell: true});
+        var users_string = child.stdout + '';
+        console.log('stdout: ' + child.stdout);
+        var users = users_string.split("\n");
+        users.pop();
+        child2 = exec('lsblk -d -n -o NAME', {shell: true});
+        var disks_string = child2.stdout + '';
+        console.log('stdout: ' + child2.stdout);
+        var disks = disks_string.split("\n");
+        disks.pop();
         let exercise_1_Message = {
-                message: 'exercise_1',
-                numberUsers: 'x',
-                userNames:['x','y'],
-                numStorageDisks:'xy',
-                storageDisksInfo:['size1', 'size2', 'size3']
-            };
+                    message: 'exercise_1',
+                    numberUsers: users.length,
+                    userNames: users,
+                    numStorageDisks: disks.length,
+                    storageDisksInfo: disks
+                };
         res.json( exercise_1_Message);
-
     });
 /**
  * Exercise 1: Task 2 Route (Service Level Authentication)
@@ -96,7 +106,7 @@ router.route('/exercise1_task2')
              * authorization header decoded : Basic CCS:ccs_exercise1_task2
              * authorization header encoded : Basic Q0NTOmNjc19leGVyY2lzZTFfdGFzazI=
              */
-             
+
             auth = new Buffer(req.headers.authorization.substring(6), 'base64').toString().split(':');
         }
         /**
