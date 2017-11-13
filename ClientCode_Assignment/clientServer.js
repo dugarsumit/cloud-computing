@@ -115,8 +115,6 @@ router.route('/exercise1_task2')
          * first value matches the expected username
          * second value the expected password
          */
-        console.log(auth[0]);
-        console.log(auth[1]);
         if (auth == null) {
             res.end('Unsuccessful Authentication1');
         }
