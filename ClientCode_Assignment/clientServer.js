@@ -93,7 +93,10 @@ router.route('/exercise1_task2')
              * decode the base64 encoded username:password
              * split the string at the colon
              * should result in an array
+             * authorization header decoded : Basic CCS:ccs_exercise1_task2
+             * authorization header encoded : Basic Q0NTOmNjc19leGVyY2lzZTFfdGFzazI=
              */
+             
             auth = new Buffer(req.headers.authorization.substring(6), 'base64').toString().split(':');
         }
         /**
@@ -102,10 +105,14 @@ router.route('/exercise1_task2')
          * first value matches the expected username
          * second value the expected password
          */
-        if (false) {
-            res.end('Unsuccessful Authentication');
+        console.log(auth[0]);
+        console.log(auth[1]);
+        if (auth == null) {
+            res.end('Unsuccessful Authentication1');
         }
-        else {
+        if(auth[0] != 'CCS' || auth[1] != 'ccs_exercise1_task2'){
+            res.end('Unsuccessful Authentication');
+        }else {
             /**
              * Processing can be continued here, user was authenticated
              */
