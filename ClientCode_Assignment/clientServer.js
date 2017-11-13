@@ -116,7 +116,7 @@ router.route('/exercise1_task2')
          * second value the expected password
          */
         if (auth == null) {
-            res.end('Unsuccessful Authentication1');
+            res.end('Unsuccessful Authentication');
         }
         if(auth[0] != 'CCS' || auth[1] != 'ccs_exercise1_task2'){
             res.end('Unsuccessful Authentication');
