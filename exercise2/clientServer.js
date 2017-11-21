@@ -161,7 +161,7 @@ router.route('/exercise1_task2')
 router.route('/exercise2')
     .get(function(req, res)
     {
-        res.send("group 19");
+        res.send("group 19 application deployed using docker");
     });
 /**
  * REGISTER OUR ROUTES
