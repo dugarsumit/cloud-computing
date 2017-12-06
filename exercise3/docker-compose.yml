@@ -2,16 +2,16 @@ version: '2'
 services:
   server:
     build: ./server
-    image: HUB_ID/microservice:server
+    image: dugarsumit/microservice:server
     ports:
       - "8080:8080"
   hello-world-service:
     build: ./hello-world-service
-    image: HUB_ID/microservice:hello
+    image: dugarsumit/microservice:hello
   product-descp-service:
     build: ./product-descp-service
-    image: HUB_ID/microservice:productdescp
+    image: dugarsumit/microservice:productdescp
   product-price-service:
     build: ./product-price-service
-    image: HUB_ID/microservice:productprice
+    image: dugarsumit/microservice:productprice
 
