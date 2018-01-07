@@ -68,6 +68,18 @@ router.route('/exercise3')
             }
         );
     });
+
+/**
+ * Exercise 2: Send a message "group 'GroupNumber' application deployed using kubernetes"
+ * Replace 'GroupNumber' with your group number
+ * This api will be called from the server
+ */
+router.route('/exercise4')
+    .get(function(req, res)
+    {
+        res.send("group 19 application deployed using kubernetes");
+    });
+
 /**
  * REGISTER OUR ROUTES
  * our router is now pointing to /exercises

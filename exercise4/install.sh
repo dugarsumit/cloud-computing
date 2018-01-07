@@ -15,10 +15,3 @@ deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubernetes-cn
-sudo iptables -I INPUT -j ACCEPT
-sudo kubeadm reset
-sudo rm -r /var/lib/kubelet
-sudo swapoff -a
-sudo free -m
-sudo kubeadm reset
-sudo kubeadm init
