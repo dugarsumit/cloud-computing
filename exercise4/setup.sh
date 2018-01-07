@@ -1,3 +1,4 @@
+netstat -plnt
 sudo systemctl start docker.service
 sudo iptables -I INPUT -j ACCEPT
 sudo kubeadm reset
@@ -36,7 +37,6 @@ kubectl expose deployment product-descp-service --port=9002
 kubectl expose deployment product-price-service --port=9003
 kubectl expose deployment server --port=8080 --target-port=8080 --type=LoadBalancer
 kubectl get services --all-namespaces
-
 kubectl scale deployment server --replicas=2
 
 #http://10.155.208.228:30733/exercises/exercise3?name=CCS&productId=3
