@@ -294,7 +294,7 @@ spec:
     spec:
       containers:
       - name: hello-world-service
-        image: docker.io/DOCKERHUB_ID/microservice:hello
+        image: docker.io/dugar/microservice:hello
         imagePullPolicy: Always
         ports:
         - containerPort: 9001
@@ -328,7 +328,7 @@ spec:
     spec:
       containers:
       - name: product-descp-service
-        image: docker.io/DOCKER_HUB_ID/microservice:productdescp
+        image: docker.io/dugar/microservice:productdescp
         imagePullPolicy: Always
         ports:
         - containerPort: 9002
@@ -362,7 +362,7 @@ spec:
     spec:
       containers:
       - name: product-price-service
-        image: docker.io/DOCKER_HUB_ID/microservice:productprice
+        image: docker.io/dugar/microservice:productprice
         imagePullPolicy: Always
         ports:
         - containerPort: 9003
@@ -396,7 +396,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: docker.io/DOCKER_HUB_ID/microservice:server
+        image: docker.io/dugar/microservice:server
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -483,6 +483,24 @@ spec:
       targetAverageUtilization: 20
 
 # ------------------- TO DO:::::HPA for product-descp-service------------------- #
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: product-desc-service
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: product-desc-service
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 10
 ---
 
 #################################################
