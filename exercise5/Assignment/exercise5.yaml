@@ -301,10 +301,10 @@ spec:
           protocol: TCP
         resources:
           limits:
-            cpu: 200m
+            cpu: 50m
             memory: 400Mi
           requests:
-            cpu: 50m
+            cpu: 25m
             memory: 200Mi
 ---
 # ------------------- product-descp-service Deployment ------------------- #
@@ -335,10 +335,10 @@ spec:
           protocol: TCP
         resources:
           limits:
-            cpu: 200m
+            cpu: 50m
             memory: 400Mi
           requests:
-            cpu: 50m
+            cpu: 25m
             memory: 200Mi
 ---
 # ------------------- product-price-service Deployment ------------------- #
@@ -369,10 +369,10 @@ spec:
           protocol: TCP
         resources:
           limits:
-            cpu: 100m
+            cpu: 50m
             memory: 400Mi
           requests:
-            cpu: 50m
+            cpu: 25m
             memory: 200Mi
 ---
 # ------------------- Server Deployment ------------------- #
