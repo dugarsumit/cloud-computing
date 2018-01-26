@@ -23,6 +23,7 @@ kubectl apply -f Assignment/exercise5.yaml
 
 sudo kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$'&
 
+kubectl get pods --all-namespaces
 kubectl get hpa --all-namespaces
 kubectl get deployments --all-namespaces
 kubectl get services --all-namespaces
