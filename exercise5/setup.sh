@@ -1,4 +1,3 @@
-netstat -plnt
 sudo systemctl start docker.service
 sudo iptables -I INPUT -j ACCEPT
 sudo kubeadm reset
