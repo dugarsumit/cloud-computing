@@ -75,7 +75,7 @@ router.route('/exercise3')
 router.route('/exercise4')
     .get(function(req, res)
     {
-        res.send("group 'GroupNumber' application deployed using kubernetes");
+        res.send("group 19 application deployed using kubernetes");
     });
 /**
  * REGISTER OUR ROUTES

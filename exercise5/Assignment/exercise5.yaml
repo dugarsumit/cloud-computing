@@ -483,25 +483,7 @@ spec:
       targetAverageUtilization: 20
 
 # ------------------- TO DO:::::HPA for product-descp-service------------------- #
----
-apiVersion: autoscaling/v2beta1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: product-descp-service
-  namespace: default
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1beta1
-    kind: Deployment
-    name: product-descp-service
-  minReplicas: 1
-  maxReplicas: 2
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      targetAverageUtilization: 10
----
+
 
 #################################################
 #					Metrics Configuration		#
