@@ -1,3 +1,4 @@
+# Make sure port 8001 is free before running this script. It is required by dashboard
 sudo systemctl start docker.service
 sudo iptables -I INPUT -j ACCEPT
 sudo kubeadm reset
